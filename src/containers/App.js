@@ -7,13 +7,24 @@ import Rank from '../components/Rank/Rank';
 import Particles from 'react-particles-js';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      input: ''
+    }
+  }
+
+  onInputChange = (event) => {
+    console.log(event);
+  }
+
   render() {
     return (
       <div className="App">
         <Navigation />
         <Logo />
         <Rank />
-        <ImageLinkForm />
+        <ImageLinkForm onInputChange={this.onInputChange} />
 
         <Particles className='particales'
           params={{
