@@ -30,11 +30,8 @@ class App extends Component {
           params={{
 
             particles: {
-
-
               number: {
                 value: 100
-          
               }
             }
           }}
