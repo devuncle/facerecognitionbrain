@@ -18,10 +18,16 @@ class App extends Component {
     super();
     this.state = {
       input: '',
-      imageUrl: ''
+      imageUrl: '',
+      box:{}
     }
   }
 
+
+  calculatFaceLocation = (data)=>{
+    const clarifaiFace = data.output[0].data.region[0].region_info.bounding_box;
+    const image = document.getElementById('imageinput');
+  }
   onInputChange = (event) => {
     this.setState({input: event.target.value});
     
@@ -35,7 +41,8 @@ class App extends Component {
       .then(
     function(response) {
       // do something with response
-      console.log(response);
+      // console.log(response);
+      this.calculatFaceLocation(response);
     },
     function(err) {
       // there was an error
