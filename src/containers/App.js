@@ -22,14 +22,24 @@ class App extends Component {
       imageUrl: "",
       box: {},
       route: "signin",
-      isSignedIn: false
+      isSignedIn: false,
+      user: {
+        id: "",
+        name: "",
+        email: "",
+        entries: 0,
+        joined: ''
+      }
     };
   }
 
-  calculatFaceLocation = data => {
-    const clarifaiFace = data.output[0].data.region[0].region_info.bounding_box;
-    const image = document.getElementById("imageinput");
-  };
+
+
+
+  // calculatFaceLocation = data => {
+  //   const clarifaiFace = data.output[0].data.region[0].region_info.bounding_box;
+  //   const image = document.getElementById("imageinput");
+  // };
 
   onInputChange = event => {
     this.setState({ input: event.target.value });
